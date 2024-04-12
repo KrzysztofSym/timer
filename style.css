@@ -1,0 +1,260 @@
+/* Add CSS here */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+/*===== VARIABLES CSS =====*/
+
+:root {
+    --h1-fs: 2rem;    --h1-fs-media: 3rem; 
+    --h2-fs: 1.5rem;  --h2-fs-media: 2rem;
+    --h3-fs: 1.3rem;  --h3-fs-media: 1.8rem;
+    --h4-fs: 1.1rem;  --h4-fs-media: 1.5rem;
+    --p-fs: .8rem;    --p-fs-media: 1.1rem;
+    --a-fs: .7rem;    --a-fs-media: 1.1rem;
+    --li-fs: .7rem;   --li-fs-media: 1.1rem;    
+
+    --clr-bg-main: #a0c9f8;
+    --clr-bg-pri: #121637;
+    --clr-bg-sec: #b4d4fb;
+    --clr-acc-main: #00bea6;
+    --clr-acc-pri: #4393f5;
+    --clr-acc-sec:  #3676c4;
+    --clr-acc-thi: #2e67a9;
+    --clr-acc-four: #ad0000;
+    --clr-acc-fif: #e03333;
+    --clr-text-main: #67696a;
+    --clr-text-pri: #36454F;  
+    
+    --shadow-color: #33cbb8;    
+    --main-ff: 'Poppins', sans-serif;
+  }
+
+/*===== BASE =====*/
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* body {
+    font-family: var(--main-ff);
+    font-size: var(--p-fs);
+    background: var(--clr-bg-main);
+    color: var(--clr-text-main);
+    width: 100%;
+    min-height: 100vh;
+}    */
+
+h1, h2, h3, h4,
+p, a, li {
+    margin: 0;
+}
+
+h1 {font-size: var(--h1-fs);}
+h2 {font-size: var(--h2-fs);}
+h3 {font-size: var(--h3-fs);}
+h4 {font-size: var(--h4-fs);}
+
+p, a, li {font-size: var(--p-fs);}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-text-main);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+
+    }
+}
+    /* animation: scaleUp 1s ease-in-out;
+    transform-origin: center center; */
+
+/*===== BUTTONS =====*/
+
+.btn {
+    display: inline-block;
+    background-color:  var(--clr-acc-pri);
+    color: #fff;
+    padding: .5rem 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: .2s;
+}
+
+.btn:last-of-type {
+    background-color: transparent;
+    color: var(--clr-acc-pri);
+}
+  
+.btn:first-of-type:hover {
+    background-color: var(--clr-acc-sec);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, .15);
+}
+
+.btn:last-of-type:hover {
+    color: var(--clr-acc-thi);
+}
+
+.btn:active {
+    scale: .97;
+}
+
+/*===== PROJECT CSS =====*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #1a88aa, #1a88aa);
+    min-height: 100vh;
+    color: #f2f2f2;
+}
+
+/* Styles for the navigation */
+nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-image: linear-gradient(to right, #00b5c1, #00aad2);
+    border-radius: 13px 13px 0 0;
+    overflow: hidden;
+}
+
+nav > div {
+    cursor: pointer;
+}
+
+nav > div:hover {
+    background-color: #5fe7c0;
+    transition-duration: 200ms;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .3rem;
+    padding: .6rem .4rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(45deg,#5fe7c0, #52d2e5);
+    border-radius: 0 0 13px 13px;
+}
+
+.timer-circle {
+    border: 2px solid #f2f2f2;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 3rem;
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform: rotate(-45deg);
+}
+
+.timer-circle::after {
+    content: "";
+    position: absolute;
+    width: 202px;
+    height: 202px;
+    border: 4px solid #f2f2f2;
+    border-right: 4px solid transparent;
+    border-radius: 50%;
+}
+
+.timer-circle::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #e2e2e2;
+    filter: blur(1px);
+    bottom: 20px;
+    right: 22px;
+    border-radius: 50%;
+}
+
+.timer-circle h2 {
+    position: absolute;
+    top: -30px;
+    right: -40px;
+    font-size: 25px;
+    transform: rotate(45deg);
+}
+
+.timer-circle h1 {
+    font-size: 30px;
+    transform: rotate(45deg);
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.footer > div {
+    border: 2px solid transparent;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    margin: .8rem;
+    cursor: pointer;
+    transition: all 900ms ease-linear;
+}
+
+.footer > div:nth-child(1):hover {
+    color: #ff7170;
+    /* border-color: #ff7170; */
+    background-color: #adfce6;
+}
+
+.footer > div:nth-child(2):hover {
+    color: #0b9cbf;
+    /* border-color: #0b9cbf; */
+    background-color: #adfce6;
+}
